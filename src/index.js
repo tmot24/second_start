@@ -1,17 +1,40 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const Header = function () {
+    return <h2>Hello world!</h2>;
+};
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const Field = () => {
+    const holder = "Enter here";
+    const styledField = {
+        width: "300px"
+    };
+
+    return (
+        <input
+            type="text"
+            placeholder={holder}
+            style={styledField}
+        />
+    );
+};
+
+const Button = () => {
+    const text = "Log in";
+    let logged = true;
+    return (
+        <button>
+            {logged ? "Enter" : text}
+        </button>
+    );
+};
+
+const App = () =>
+    <>
+        <Header/>
+        <Field/>
+        <Button/>
+    </>
+;
+ReactDOM.render(<App/>, document.getElementById("root"));
